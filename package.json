@@ -22,12 +22,13 @@
     "style-loader": "^0.19.1",
     "ts-loader": "^3.1.1",
     "url-loader": "^0.6.2",
-    "webpack-dev-server": "^2.11.2"
+    "webpack-dev-server": "^2.11.2",
+    "webpack-merge": "^4.1.2"
   },
   "scripts": {
-    "build": "webpack",
     "watch": "webpack --watch",
-    "start": "webpack && webpack-dev-server --open"
+    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
   },
   "repository": {
     "type": "git",
