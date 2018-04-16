@@ -5,11 +5,13 @@
 webpack是一款基于模块的动态打包工具，其最与众不同之处在于按需加载，只加载依赖的资源，实现模块与资源的直观组合。
 ## 配置
 ### entry   输入配置
-- 单文件入口配置： 可以使用相对路径（例如："./asset/index.js"），也可以使用绝对路径（例如：path.resolve(__dirname, "asset/index.js")）;
+- 单文件入口配置：   
+  - 可以使用相对路径（例如："./asset/index.js"）;  
+  - 也可以使用绝对路径（例如：path.resolve(__dirname, "asset/index.js")）;
 - 多文件入口配置： 
-{
-    entry1: "./entry1.js",
-    entry2: "./entry2.js"
+{  
+    entry1: "./entry1.js",  
+    entry2: "./entry2.js"  
 }
 ### output  输出配置
 - path: 输出文件的目录
