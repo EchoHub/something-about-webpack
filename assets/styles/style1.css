@@ -1,3 +1,7 @@
+@font-face{
+    font-family: "echofont";
+    src:  url('./../../components/font/iconfont.woff') format('woff'),
+}
 ._publicPath{
     color: #e6600c;
 }
