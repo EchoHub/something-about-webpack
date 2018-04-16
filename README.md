@@ -1,4 +1,4 @@
-#webpack学习笔记  webpack 动态打包工具
+# webpack学习笔记  webpack 动态打包工具
 webpack = entry + output + module + plugins
 
 - entry   输入配置
