@@ -16,11 +16,11 @@ module.exports = {
         extensions: [".webpack.js", ".ts", ".tsx", ".js", ".css"], // 自动解析确定的拓展 自动补全
         modules: ["./components", "./assets/styles", "mock", "node_modules"] // 配置webpack解析模块时搜索的目录
     },
-    devServer: {
-        contentBase: "./_build",
+    // devServer: {
+        // contentBase: "./_build",
         // inline: true,
         // hot: true
-    },
+    // },
     module: {
         noParse: function (content) {
             // 防止 webpack 解析那些任何与给定正则表达式相匹配的文件
@@ -48,12 +48,13 @@ module.exports = {
         ]
     },
     plugins: [
+        new CleanWebpackPlugin(["_build"]),
         new webpack.optimize.UglifyJsPlugin(),
         new HtmlWebpackPlugin({
             title: "Webpack LearningNote",
             inject: "body",
             template: path.resolve(__dirname, 'page/index.html')
         }),
-        new CleanWebpackPlugin(["_build"])
+        new ExtractTextPlugin("style.css")
     ]
 }

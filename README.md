@@ -50,4 +50,6 @@ webpack是一款基于模块的动态打包工具，其最与众不同之处在�
 - clean-webpack-plugin： 清理指定目录文件
     - ["_build"] 数组类型，配置需要清理的目录
     - 具体 参照（https://www.npmjs.com/package/clean-webpack-plugin）
-
+- webpack.optimize.UglifyJsPlugin： 代码压缩
+- extract-text-webpack-plugin：独立打包样式 将内联的css样式抽离出来打包进指定文件中去
+    - 具体 参照（https://www.npmjs.com/package/extract-text-webpack-plugin）
