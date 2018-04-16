@@ -2,6 +2,7 @@ const webpack = require("webpack");
 const path  = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // 按需生成html模版
 const ExtractTextPlugin = require("extract-text-webpack-plugin"); // 提取代码中的css生成独立的css文件
+const CleanWebpackPlugin = require("clean-webpack-plugin"); // 清理文件
 module.exports = {
     entry: path.resolve(__dirname, "assets/scripts/main.js"), //转绝对路径 也可用相对路径 例如"./assets/scripts/main.js"
     output: {
@@ -43,7 +44,10 @@ module.exports = {
     plugins: [
         new webpack.optimize.UglifyJsPlugin(),
         new HtmlWebpackPlugin({
+            title: "Webpack LearningNote",
+            inject: "body",
             template: path.resolve(__dirname, 'page/index.html')
-        })
+        }),
+        new CleanWebpackPlugin(["_build"])
     ]
 }

@@ -35,8 +35,8 @@ webpack是一款基于模块的动态打包工具，其最与众不同之处在�
     - use  配置加载器，用于解析符合条件的文件内容
 ```
 ## 常用插件
+- html-webpack-plugin： 生成模版页面
 ```bash
-- html-webpack-plugin
     - title 设置文件标题
     - filename 生成文件的名称，默认为index
     - template 模版文件
@@ -44,5 +44,9 @@ webpack是一款基于模块的动态打包工具，其最与众不同之处在�
     - favicon 配置页面的icon
     - minify 是否对文件进行压缩 true|false
     ...
+```
+- clean-webpack-plugin： 清理指定目录文件
+```bash
+    - ["_build"] 数组类型，配置需要清理的目录
 ```
 
