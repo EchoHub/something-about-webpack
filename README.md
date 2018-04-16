@@ -1,5 +1,6 @@
-# webpack学习笔记  webpack 动态打包工具
-webpack = entry + output + module + plugins
+# webpack学习笔记  
+官方地址：http://webpack.github.io/
+中文地址：https://www.webpackjs.com/
 
 - entry   输入配置
     可以使用相对路径（例如："./asset/index.js"），也可以使用绝对路径（例如：path.resolve(__dirname, "asset/index.js")）;
