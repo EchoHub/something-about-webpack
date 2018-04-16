@@ -26,7 +26,8 @@
   },
   "scripts": {
     "build": "webpack",
-    "server": "webpack && webpack-dev-server --open"
+    "watch": "webpack --watch",
+    "start": "webpack && webpack-dev-server --open"
   },
   "repository": {
     "type": "git",

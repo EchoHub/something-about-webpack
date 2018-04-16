@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin'); // 按需生成html模
 const ExtractTextPlugin = require("extract-text-webpack-plugin"); // 提取代码中的css生成独立的css文件
 const CleanWebpackPlugin = require("clean-webpack-plugin"); // 清理文件
 module.exports = {
+    devtool: 'cheap-module-eval-source-map', // dev: cheap-module-eval-source-map,prd: cheap-module-source-map
     entry: path.resolve(__dirname, "assets/scripts/main.js"), //转绝对路径 也可用相对路径 例如"./assets/scripts/main.js"
     output: {
         path: path.resolve(__dirname, "_build"),
@@ -14,6 +15,11 @@ module.exports = {
     //     enforceExtension: true, // 若为true 表示不允许允许无拓展名文件， 默认为false
         extensions: [".webpack.js", ".ts", ".tsx", ".js", ".css"], // 自动解析确定的拓展 自动补全
         modules: ["./components", "./assets/styles", "mock", "node_modules"] // 配置webpack解析模块时搜索的目录
+    },
+    devServer: {
+        contentBase: "./_build",
+        // inline: true,
+        // hot: true
     },
     module: {
         noParse: function (content) {
