@@ -27,7 +27,7 @@
   "scripts": {
     "build": "webpack",
     "watch": "webpack --watch",
-    "start": "webpack-dev-server --contentBase build --inline --hot  --open"
+    "start": "webpack && webpack-dev-server --open"
   },
   "repository": {
     "type": "git",

@@ -1,5 +1,5 @@
-import "style1";
-import "style2";
+import "style1.css";
+import "style2.css";
 import * as d from "data.json"
 console.log(d)
 import { testFunc }  from "test";
