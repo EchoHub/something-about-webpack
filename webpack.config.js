@@ -29,7 +29,8 @@ module.exports = {
             {
                 test: /\.(ts|tsx)$/,
                 include: path.resolve(__dirname, "components"),
-                use: "ts-loader"
+                use: "ts-loader",
+                exclude: /node_modules/
             },
             {
                 test: /\.(png|svg|jpg|gif)$/,
@@ -39,11 +40,16 @@ module.exports = {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
                 use: ["file-loader", "url-loader"] // 加载字体
             }
-        ],
-        plugins: [
-            // new webpack.DefinePlugin({
-            //     'process.env.NODE_ENV': JSON.stringify('production')
-            // })
         ]
     },
+    plugins: [
+        // new webpack.DefinePlugin({
+        //     'process.env.NODE_ENV': JSON.stringify('production')
+        // })
+        // new webpack.optimize.CommonsChunkPlugin(
+        //     { // 抽离公共模块 去重
+        //         name: 'common' // 指定公共 bundle 的名称。
+        //     }
+        // )
+    ]
 }
