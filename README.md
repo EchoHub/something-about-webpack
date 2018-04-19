@@ -66,13 +66,18 @@ webpack是一款基于模块的动态打包工具，其最与众不同之处在�
 - 将loader运用在必要的模块中  
     - include的运用，例如  
         {  
-        test: /\.js$/,  
-        include: path.resolve(__dirname, "components"),  
-        loader: "babel-loader"  
+          test: /\.js$/,  
+          include: path.resolve(__dirname, "components"),  
+          loader: "babel-loader"  
         } 替换 {  
-        test: /\.js$/,  
-        loader: "babel-loader"  
+          test: /\.js$/,  
+          loader: "babel-loader"  
         }  
+    - 尽量减少使用工具包，因为每个工具包都需要额外的加载时间
+    - resolve 解析的时候，尽量减少 extension、modules等中的文件个数，因为这会增加文件系统调用的次数
+    - 区分开发和生产环境，对不同环境进行不同配置，避免不必要的plugins、loaders加载
+    ...
+
 <!-- ## 创建Library 
 - https://www.webpackjs.com/guides/author-libraries/ -->
 <!-- ## 渐进式网络应用程序 Progressive Web Application -->
