@@ -62,6 +62,17 @@ webpack是一款基于模块的动态打包工具，其最与众不同之处在�
 ### 缓存
 - [hash]、[chunkhash] 对文件添加后缀 实现文件无缓存
 - new webpack.optimize.CommonsChunkPlugin 对模块实现分离提取，通过指定entry中未配置的文件进行打包，可以讲不常更新的模块、第三方插件进行提取打包 配合缓存机制实现长期缓存
+## 构建性能
+- 将loader运用在必要的模块中  
+    - include的运用，例如  
+        {  
+        test: /\.js$/,  
+        include: path.resolve(__dirname, "components"),  
+        loader: "babel-loader"  
+        } 替换 {  
+        test: /\.js$/,  
+        loader: "babel-loader"  
+        }  
 <!-- ## 创建Library 
 - https://www.webpackjs.com/guides/author-libraries/ -->
 <!-- ## 渐进式网络应用程序 Progressive Web Application -->
